@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3ustm1yumtdp"]
+[gd_scene load_steps=7 format=3 uid="uid://dsthln6d1qp2q"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_6xpfj"]
 [ext_resource type="PackedScene" uid="uid://b11vqym4u378n" path="res://Cuadrao.tscn" id="1_h88bm"]
-[ext_resource type="Script" path="res://Player.gd" id="3_qg04v"]
+[ext_resource type="Script" path="res://PlayerOk.gd" id="2_nnoun"]
+
+[sub_resource type="GDScript" id="GDScript_enpfm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v0v62"]
 
@@ -14,7 +15,7 @@ radius = 0.506324
 height = 1.93313
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_6xpfj")
+script = SubResource("GDScript_enpfm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.803919, 0.513128, -0.300689, -3.72108e-09, 0.505582, 0.862779, 0.594739, -0.693604, 0.406447, 0.701032, 7.94864, 4.99406)
@@ -24,8 +25,8 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.733552, -0.679633, 0, 0.679633, 0.733552, -0.16554, 2.34602, -0.727228)
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20454, 1.62216, -1.79578)
-script = ExtResource("3_qg04v")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208968, 0.177293, 2.50499)
+script = ExtResource("2_nnoun")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644335, 1.18999, 0.132848)
@@ -37,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628912, 1.13666, 0.104357)
 shape = SubResource("CapsuleShape3D_cab3r")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.951498, 0.307656, 0, -0.307656, 0.951498, 0.843127, 1.80842, 0.664003)
+transform = Transform3D(0.999165, 0.0260478, 0.0314864, -0.036979, 0.904249, 0.425402, -0.0173908, -0.426211, 0.904456, 0.587054, 2.11409, 3.27801)
 fov = 80.6272
 
 [node name="Suelo" type="CSGBox3D" parent="."]
