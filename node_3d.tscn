@@ -1,18 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsthln6d1qp2q"]
+[gd_scene load_steps=4 format=3 uid="uid://dsthln6d1qp2q"]
 
 [ext_resource type="PackedScene" uid="uid://b11vqym4u378n" path="res://Cuadrao.tscn" id="1_h88bm"]
-[ext_resource type="Script" path="res://PlayerOk.gd" id="2_nnoun"]
+[ext_resource type="PackedScene" uid="uid://d1jbcfiq6m78p" path="res://Escenas/player.tscn" id="2_5fyaw"]
 
 [sub_resource type="GDScript" id="GDScript_enpfm"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_v0v62"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12yyj"]
-albedo_color = Color(0.133333, 0.666667, 0.494118, 1)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cab3r"]
-radius = 0.506324
-height = 1.93313
 
 [node name="Node3D" type="Node3D"]
 script = SubResource("GDScript_enpfm")
@@ -24,24 +15,10 @@ shadow_enabled = true
 [node name="RigidBody3D" parent="." instance=ExtResource("1_h88bm")]
 transform = Transform3D(1, 0, 0, 0, 0.733552, -0.679633, 0, 0.679633, 0.733552, -0.16554, 2.34602, -0.727228)
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208968, 0.177293, 2.50499)
-script = ExtResource("2_nnoun")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644335, 1.18999, 0.132848)
-mesh = SubResource("CapsuleMesh_v0v62")
-surface_material_override/0 = SubResource("StandardMaterial3D_12yyj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628912, 1.13666, 0.104357)
-shape = SubResource("CapsuleShape3D_cab3r")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.999165, 0.0260478, 0.0314864, -0.036979, 0.904249, 0.425402, -0.0173908, -0.426211, 0.904456, 0.587054, 2.11409, 3.27801)
-fov = 80.6272
-
 [node name="Suelo" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27752, -0.303741, -4.27647)
 use_collision = true
 size = Vector3(112.225, 1, 92.4858)
+
+[node name="Player" parent="." instance=ExtResource("2_5fyaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231184, 0.196259, 1.57999)

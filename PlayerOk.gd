@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var MainCamera = get_node("Camera3D")
+@onready var MainCamera = get_node("MainCamera")
 
 
 const SPEED = 5.0
